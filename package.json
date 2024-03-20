@@ -1,0 +1,22 @@
+{
+  "name": "q-a",
+  "version": "1.0.0",
+  "description": "'Q and A DB and Server'",
+  "main": "index.js",
+  "scripts": {
+    "test": "''"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boujee-booleans/Q-A.git"
+  },
+  "author": "MwaniN",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/boujee-booleans/Q-A/issues"
+  },
+  "homepage": "https://github.com/boujee-booleans/Q-A#readme",
+  "dependencies": {
+    "express": "^4.19.1"
+  }
+}
