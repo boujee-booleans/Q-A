@@ -18,6 +18,7 @@
   "homepage": "https://github.com/boujee-booleans/Q-A#readme",
   "dependencies": {
     "express": "^4.19.1",
+    "nodemon": "^3.1.0",
     "pg": "8.11.3",
     "pg-copy-streams": "6.0.6"
   }
