@@ -1,11 +1,16 @@
 const { Client } = require('pg');
+const config = require('./config.json')
+
+// Getting connectin parameters from config.json
+const host = config.host
+const user = config.user
+const pw = config.pw
+const db = config.db
+const port = config.port
+const conString = `postgres://${user}:${pw}@${host}:${port}/${db}`
 
 const client = new Client({
-  "host": "localhost",
-  "user": "magicarpe_diem",
-  "password": "1234",
-  "database": "qadb",
-  "port": 5432
+  connectionString: conString
 })
 
 client.connect();
@@ -41,8 +46,10 @@ async function dbConnection () {
     PRIMARY KEY (id),
     FOREIGN KEY (answer_id) REFERENCES answers(id)
   )`)
-  console.log('tables successfully created')
+  console.log('tables successfully created OR already exist')
 
 }
 
 dbConnection();
+
+module.exports = client;
