@@ -23,6 +23,7 @@ async function dbConnection () {
     question_body text NOT NULL,
     question_date bigint NOT NULL,
     asker_name VARCHAR(50) NOT NULL,
+    email VARCHAR(50) NOT NULL,
     question_helpfulness INT DEFAULT '0',
     reported SMALLINT DEFAULT '0',
     PRIMARY KEY (question_id)

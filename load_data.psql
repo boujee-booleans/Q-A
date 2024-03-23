@@ -8,9 +8,21 @@
     asker_name,
     question_helpfulness,
     reported)
-    from '\\wsl.localhost\Ubuntu-22.04\home\mwani\hackreactor\Q-A\csv_data' WITH DELIMITER ',' CSV HEADER;
+    from '/mnt/c/users/Mwani/Documents/Code/SDC Project/questions.csv' WITH DELIMITER ',' CSV HEADER;
 
-    \\wsl.localhost\Ubuntu-22.04\home\mwani\hackreactor\Q-A\csv_data\questions.csv
+    ^this is right, it's expecting it to start here
+    freaking finally
+
+    C:/mnt/Users/Mwani/Documents/Code/SDC Project/questions.csv
+
+    \copy questions (product_id,
+    question_id,
+    question_body,
+    question_date,
+    asker_name,
+    question_helpfulness,
+    reported)
+    from '/mnt/c/users/Mwani/Documents/Code/SDC Project/questions.csv' WITH DELIMITER ',' CSV HEADER;
 
 \copy target_table (column-1, column-2, column-3, ...)
     from '/path/to/local/filename.csv' WITH DELIMITER ',' CSV HEADER;
