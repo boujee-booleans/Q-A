@@ -1,0 +1,3 @@
+INSERT INTO answers_photos (id, answer_id, url)
+VALUES('It's a test', 'It worked', 'Huzzah');
+

@@ -53,3 +53,4 @@ async function dbConnection () {
 dbConnection();
 
 module.exports = client;
+
