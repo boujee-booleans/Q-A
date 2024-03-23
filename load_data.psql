@@ -13,7 +13,8 @@
     ^this is right, it's expecting it to start here
     freaking finally
 
-    C:/mnt/Users/Mwani/Documents/Code/SDC Project/questions.csv
+   Gotta check on this => ERROR:  extra data after last expected column
+CONTEXT:  COPY questions, line 2: "1,1,"What fabric is the top made of?",1595884714409,"yankeelover","first.last@gmail.com",0,1"
 
     \copy questions (product_id,
     question_id,
