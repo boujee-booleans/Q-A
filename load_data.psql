@@ -1,5 +1,10 @@
+Template
+
 \copy target_table (column-1, column-2, column-3, ...)
     from '/path/to/local/filename.csv' WITH DELIMITER ',' CSV HEADER;
+
+
+These tables
 
 \copy questions (
     question_id,
@@ -12,7 +17,7 @@
     reported)
     from '/mnt/c/users/Mwani/Documents/Code/SDC Project/questions.csv' WITH DELIMITER ',' CSV HEADER;
 
-    ^this is right, it's expecting it to start here
+    ^this is right, it's expecting it to start here (from the "home" folder for your user)
     freaking finally
 
     \copy answers (
