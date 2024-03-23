@@ -18,8 +18,8 @@ client.connect();
 
 async function dbConnection () {
   const questionsTable = await client.query(`CREATE TABLE IF NOT EXISTS questions (
-    product_id INT,
     question_id INT NOT NULL,
+    product_id INT,
     question_body text NOT NULL,
     question_date bigint NOT NULL,
     asker_name VARCHAR(50) NOT NULL,
@@ -34,8 +34,9 @@ async function dbConnection () {
     body text NOT NULL,
     date bigint NOT NULL,
     answerer_name VARCHAR(50) NOT NULL,
-    helpfulness INT DEFAULT '0',
+    answerer_email VARCHAR(50) NOT NULL,
     reported SMALLINT DEFAULT '0',
+    helpfulness INT DEFAULT '0',
     PRIMARY KEY (id),
     FOREIGN KEY (question_id) REFERENCES questions(question_id)
 
