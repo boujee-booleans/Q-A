@@ -18,7 +18,7 @@ client.connect();
 
 async function dbConnection () {
   const questionsTable = await client.query(`CREATE TABLE IF NOT EXISTS questions (
-    question_id INT NOT NULL,
+    question_id BIGSERIAL NOT NULL,
     product_id INT,
     question_body text NOT NULL,
     question_date bigint NOT NULL,
@@ -29,7 +29,7 @@ async function dbConnection () {
     PRIMARY KEY (question_id)
   )`)
   const answersTable = await client.query(`CREATE TABLE IF NOT EXISTS answers (
-    id INT,
+    id BIGSERIAL,
     question_id INT NOT NULL,
     body text NOT NULL,
     date bigint NOT NULL,
@@ -42,7 +42,7 @@ async function dbConnection () {
 
   )`)
   const answersPhotosTable = await client.query(`CREATE TABLE IF NOT EXISTS answers_photos (
-    id INT,
+    id BIGSERIAL,
     answer_id INT NOT NULL,
     url text NOT NULL,
     PRIMARY KEY (id),
