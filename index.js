@@ -15,7 +15,7 @@ app.get('/qa/questions', (req, res) =>{
   }()
   console.log(response, "this is response!!!")
 
-  response.then((data) => {res.status(200).send(data)})
+  response.then((data) => {res.status(200).send(data.rows)})
 })
 
 // app.get (`/qa/questions/${question_id}/answers`, (req, res) => {
