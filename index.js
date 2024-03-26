@@ -2,18 +2,26 @@ require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const models  = require('./models/models.js');
+var qs = require('qs');
 
 const app = express();
 app.use(express.json())
 
-app.get('/qa/questions', (req, res) =>{
+app.set('query parser', function (str) {
+  return qs.parse(str, { /* custom options */ })
+})
+
+app.get('/qa/questions/:product_id/', (req, res) =>{
   // Retrieves a list of questions for a particular product.
   // This list does not include any reported questions.
+
+  // console.log(req.query, " this is req.query!!!!")
+  // console.log(req.params, " this is req.params!!!!")
+  // look up the difference between queries and params for API requests
   const response = async function () {
-    const result = await models.getQuestions()
+    const result = await models.getQuestions(req.params.product_id)
     return result;
   }()
-  console.log(response, "this is response!!!")
 
   response.then((data) => {res.status(200).send(data.rows)})
 })
