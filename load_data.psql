@@ -39,6 +39,12 @@ These tables
     )
     from '/mnt/c/users/Mwani/Documents/Code/SDC Project/answers_photos.csv' WITH DELIMITER ',' CSV HEADER;
 
+    CREATE INDEX IF NOT EXISTS product_id_index ON questions(product_id);
+
+    CREATE INDEX IF NOT EXISTS question_id_answers_index ON answers(question_id);
+
+    CREATE INDEX IF NOT EXISTS answer_id_photos_index ON answers_photos(answer_id);
+
     How to dump the DB
     Done in node
 
