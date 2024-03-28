@@ -38,3 +38,8 @@ These tables
     url
     )
     from '/mnt/c/users/Mwani/Documents/Code/SDC Project/answers_photos.csv' WITH DELIMITER ',' CSV HEADER;
+
+    How to dump the DB
+    Done in node
+
+    pg_dump -h localhost -p 5432 -U postgres -Fc -b -v -f "./qNaDump.psql" -d qadb;
