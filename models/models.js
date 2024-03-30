@@ -23,7 +23,7 @@ exports.getQuestions = async function getQuestions (product_id) {
     WHERE
     q.reported = 0
     AND
-    product_id IN ('${product_id}');
+    product_id = '${product_id}';
   `)
 
   return questions;

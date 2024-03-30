@@ -48,4 +48,41 @@ These tables
     How to dump the DB
     Done in node
 
-    pg_dump -h localhost -p 5432 -U postgres -Fc -b -v -f "./qNaDump.psql" -d qadb;
+    pg_dump -h localhost -p 5432 -U postgres -Fc -b -v -f "./qNaDump_withIndexes.psql" -d qadb;
+
+    Put the thing on the thing
+
+    scp -v -i KeyKeyKeyNew.pem qNaDump_withIndexes.psql ubuntu@ec2-3-145-158-21.us-east-2.compute.amazonaws.com:~/qNaDump_withIndexes.psql
+
+    Do the restore
+
+    pg_restore -v -h  ec2-18-191-9-44.us-east-2.compute.amazonaws.com -U postgres -d qadb -j 2 qNaDump_withIndexes.psql
+
+    sudo systemctl stop postgresql
+
+    sudo systemctl start postgresql
+
+
+    SELECT
+  q.question_id,
+    q.product_id,
+    q.question_body,
+    q.question_date,
+    q.asker_name,
+    q.question_helpfulness,
+    q.reported,
+    a.id,
+    a.body,
+    a.date,
+    a.answerer_name,
+    a.helpfulness,
+    ap.id,
+    ap.url
+    FROM
+    questions q
+    JOIN answers a ON q.question_id = a.question_id
+    JOIN answers_photos ap ON a.id = ap.answer_id
+    WHERE
+    q.reported = 0
+    AND
+    product_id = 15;
